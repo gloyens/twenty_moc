@@ -1,0 +1,2 @@
+class WritingSessionsController < ApplicationController
+end

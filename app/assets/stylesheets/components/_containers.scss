@@ -1,0 +1,10 @@
+.margin-container {
+  margin: auto;
+  width: 700px;
+}
+
+@media (max-width: 768px) {
+  .margin-container {
+    width: 100%;
+  }
+}

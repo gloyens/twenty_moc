@@ -3,3 +3,18 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+@import "input";
+@import "containers";
+@import "scrollbar";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $beige;
+}
+
+* {
+  // border: 1px solid red;
+  box-sizing: border-box;
+}

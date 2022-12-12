@@ -19,8 +19,9 @@
       <% end %>
 
       <!-- Copy -->
-      <%= link_to "#", class: "navbar-brand" do %>
+      <%= link_to "", class: "navbar-brand tooltip-container", data: { action: "click->body#copy" } do %>
         <i class="fa-solid fa-copy"></i>
+        <span class="tooltip-text" data-body-target="tooltip">Copied!</span>
       <% end %>
 
       <!-- Info -->

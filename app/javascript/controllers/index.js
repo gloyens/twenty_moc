@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import InputController from "./input_controller"
 application.register("input", InputController)
+
+import BodyController from "./body_controller"
+application.register("body", BodyController)

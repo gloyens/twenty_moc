@@ -6,15 +6,14 @@
             onmousedown="return false;"
             onclick="this.focus()"
             data-controller="input"
-            data-action="keydown->input#doNothing"
+            data-action="keydown->input#doNothing keyup->body#startTimer"
             data-body-target="input"></textarea>
 </div>
 
-<!-- Modal -->
+<!-- Info Modal -->
 <div id="infoModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg modal-dialog-centered">
 
-    <!-- Modal content-->
     <div class="modal-content modal-main">
 
       <div class="modal-header">
@@ -28,6 +27,27 @@
         <p>Whenever you’re ready, you can start typing to begin the timer. Remember: the backspace key is disabled, so you'll need to keep writing without stopping or editing. The goal is to write continuously for the full 20 minutes.</p>
         <p>As you write, let your ideas flow and don't worry about the quality or correctness of your writing. The point is to get your thoughts down on paper and become a more confident writer. At the end of the 20 minutes, you'll be given a score based on how much time you spent typing.</p>
         <p>Give it a try and see how much you can improve in just 20 minutes!</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Finish Modal -->
+<div id="finishModal" class="modal fade" role="dialog" data-body-target="finishModal">
+  <div class="modal-dialog modal modal-dialog-centered">
+
+    <div class="modal-content modal-main">
+
+      <div class="modal-header">
+        <h1 class="modal-title">Time's up!</h1>
+        <button type="button" class="close" data-bs-dismiss="modal"><i class="fa-solid fa-square-xmark fa-2x"></i></button>
+      </div>
+
+      <div class="modal-body">
+        <p>This is a modal to show that the timer has ended. It works!</p>
+        <h4>IT WORKS!!!</h4>
       </div>
 
     </div>

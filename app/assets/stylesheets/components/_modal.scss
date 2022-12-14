@@ -22,6 +22,10 @@
   color: $dark-beige;
   background-color: transparent;
   border: none;
+
+  &:hover {
+    color: $darker-beige;
+  }
 }
 
 // .modal-backdrop {

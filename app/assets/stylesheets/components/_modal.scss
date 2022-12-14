@@ -1,0 +1,29 @@
+.modal-main {
+  background-color: $beige;
+  border: none;
+  border-radius: 5px;
+
+  padding: 24px 36px;
+
+  p { font-size: 16px; }
+}
+
+.modal-header {
+  border: none;
+  // align-items: flex-start;
+  button {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+  }
+}
+
+.close {
+  color: $dark-beige;
+  background-color: transparent;
+  border: none;
+}
+
+// .modal-backdrop {
+//   background-color: $darker-beige;
+// }

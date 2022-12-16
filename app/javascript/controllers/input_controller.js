@@ -17,10 +17,6 @@ export default class extends Controller {
       event.preventDefault();
     }
 
-    // if (event.key === "Backspace") { // move to body controller and add toggle.
-    //   if (this.inputTarget.value.endsWith(" ")) { event.preventDefault(); }
-    // }
-
     if (event.ctrlKey === true && (ctrlDisabled.includes(event.key))) {
       console.log(`Ctrl+${event.key} disabled!`)
       event.preventDefault();

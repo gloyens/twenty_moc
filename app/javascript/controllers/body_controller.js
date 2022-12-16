@@ -171,7 +171,7 @@ export default class extends Controller {
     }
 
     // Scores
-    if (typingPercent === 100) {
+    if (typingPercent == 100) {
         this.modalImageTarget.src = "/platinum-medal.png";
         text += "You got a platinum medal!";
         this.finishContentTarget.innerHTML = text;

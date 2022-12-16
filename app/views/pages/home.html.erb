@@ -6,7 +6,7 @@
             onmousedown="return false;"
             onclick="this.focus()"
             data-controller="input"
-            data-action="keydown->input#doNothing keyup->body#startTimer"
+            data-action="keydown->input#doNothing keyup->body#startTimer keyup->body#checkBreak"
             data-body-target="input"></textarea>
 </div>
 
@@ -42,10 +42,11 @@
 
       <div class="modal-header">
         <h1 class="modal-title">Time's up!</h1>
-        <button type="button" class="close" data-bs-dismiss="modal"><i class="fa-solid fa-square-xmark fa-2x"></i></button>
+        <!-- for some readon, data-bs-dismiss="modal" doesn't work on this button. -->
+        <button type="button" class="close" data-bs-toggle="modal"><i class="fa-solid fa-square-xmark fa-2x"></i></button>
       </div>
 
-      <div class="modal-body">
+      <div class="modal-body" data-body-target="finishContent">
         <p>This is a modal to show that the timer has ended. It works!</p>
         <h4>IT WORKS!!!</h4>
       </div>

@@ -6,8 +6,9 @@
             onmousedown="return false;"
             onclick="this.focus()"
             data-controller="input"
-            data-action="keydown->input#doNothing keyup->body#startTimer keyup->body#checkBreak"
-            data-body-target="input"></textarea>
+            data-action="keydown->input#doNothing keydown->body#backspaceCheck keyup->body#startTimer keyup->body#checkBreak"
+            data-body-target="input"
+            data-input-target="input"></textarea>
 </div>
 
 <!-- Info Modal -->

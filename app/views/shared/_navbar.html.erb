@@ -14,7 +14,17 @@
 
     <div class="navbar-icons">
       <!-- Timer -->
-      <%= link_to "", class: "navbar-brand tooltip-container", data: { action: "click->body#showTimer", time_param: "2" } do %>
+      <%= link_to "",
+        class: "navbar-brand tooltip-container",
+        style: "color: #cdbfb4",
+        data: { action: "click->body#toggleStrictBackspace",
+                body_target: "backspaceToggle" },
+        onclick: "return false;" do %>
+        <i class="fa-solid fa-backspace"></i>
+      <% end %>
+
+      <!-- Timer -->
+      <%= link_to "", class: "navbar-brand tooltip-container", data: { action: "click->body#showTimer" } do %>
         <i class="fa-solid fa-clock"></i>
         <span class="tooltip-text" data-body-target="tooltipTimer">--:--</span>
       <% end %>

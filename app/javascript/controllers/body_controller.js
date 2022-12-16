@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import { Modal } from 'bootstrap';
 
-let seconds = 5; // Total time
+let seconds = 20 * 60; // Total time
 
 let startTime;
 let endTime;

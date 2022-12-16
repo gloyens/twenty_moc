@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import { Modal } from 'bootstrap';
 
-let seconds = 15; // Total time
+let seconds = 5; // Total time
 
 let startTime;
 let endTime;
@@ -25,7 +25,8 @@ export default class extends Controller {
     "tooltipTimer",
     "finishModal",
     "finishContent",
-    "backspaceToggle"];
+    "backspaceToggle",
+    "modalImage"];
 
   connect() {
     // Reset any existing timers.
@@ -135,10 +136,6 @@ export default class extends Controller {
     }
   }
 
-  // Update content in completion modal
-  updateFinishModal() {
-    this.finishContentTarget.innerHTML = `You stopped ${breakCount} times for a total of ${breakTotalTime}ms!`
-  }
 
   toggleStrictBackspace() {
     strictBackspace = !strictBackspace;
@@ -152,6 +149,53 @@ export default class extends Controller {
     } else if (event.key === "Backspace" && !strictBackspace) {
       // Allow 1 word to be deleted
       if (this.inputTarget.value.endsWith(" ")) { event.preventDefault(); }
+    }
+  }
+
+  // Update content in completion modal
+  updateFinishModal() {
+    let typingTime = seconds - Math.floor(breakTotalTime / 1000);
+    let typingPercent = (Math.round((typingTime / seconds) * 200) / 2); // Rounds to nearest 0.5
+
+    let text = `You typed for ${typingPercent}% of the time`
+
+    // Break counts
+    if (breakCount === 0) {
+      text += " without stopping once! "
+    } else if (breakCount === 1) {
+      text += ", only stopping once! "
+    } else if (breakCount === 2) {
+      text += ", only stopping twice! "
+    } else {
+      text += `, stopping ${breakCount} times! `
+    }
+
+    // Scores
+    if (typingPercent === 100) {
+        this.modalImageTarget.src = "/platinum-medal.png";
+        text += "You got a platinum medal!";
+        this.finishContentTarget.innerHTML = text;
+
+    } else if (typingPercent < 100 && typingPercent >= 80) {
+      this.modalImageTarget.src = "/gold-medal.png";
+      text += "You got a gold medal!";
+      this.finishContentTarget.innerHTML = text;
+
+    } else if (typingPercent < 80 && typingPercent >= 60) {
+      this.modalImageTarget.src = "/silver-medal.png";
+      text += "You got a silver medal!";
+      this.finishContentTarget.innerHTML = text;
+
+    } else if (typingPercent < 60 &&  typingPercent >= 40) {
+      this.modalImageTarget.src = "/bronze-medal.png";
+      text += "You got a bronze medal!";
+      this.finishContentTarget.innerHTML = text;
+
+    } else {
+      this.modalImageTarget.src = "/no-medal.png";
+      text += "You didn't get a medal. Better luck next time!";
+      this.finishContentTarget.innerHTML = text;
+
     }
   }
 }

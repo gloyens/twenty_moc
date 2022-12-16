@@ -25,9 +25,10 @@
       <div class="modal-body">
         <p><strong>Welcome to 20 Minutes of Crap!</strong> This app is designed to help you improve your writing skills and break through writer's block. It's based on the idea that the best way to improve your writing is to just start writing, even if it's not perfect at first.
         <p><strong>Here's how it works:</strong></p>
-        <p>Whenever you’re ready, you can start typing to begin the timer. Remember: the backspace key is disabled, so you'll need to keep writing without stopping or editing. The goal is to write continuously for the full 20 minutes.</p>
-        <p>As you write, let your ideas flow and don't worry about the quality or correctness of your writing. The point is to get your thoughts down on paper and become a more confident writer. At the end of the 20 minutes, you'll be given a score based on how much time you spent typing.</p>
+        <p>Whenever you’re ready, you can start typing to begin the timer. The backspace key is disabled by default, but you can choose to allow yourself to delete up to one word. Don't worry about the quality or accuracy of your writing – the goal is to get your thoughts down on paper and become a more confident writer.</p>
+        <p>At the end of the 20 minutes, you'll be given a score based on how much time you spent typing (breaks of under 5 seconds aren't counted).</p>
         <p>Give it a try and see how much you can improve in just 20 minutes!</p>
+
       </div>
 
     </div>
@@ -47,10 +48,19 @@
         <button type="button" class="close" data-bs-toggle="modal"><i class="fa-solid fa-square-xmark fa-2x"></i></button>
       </div>
 
+      <img src="/no-medal.png" class="modal-image" data-body-target="modalImage">
+
       <div class="modal-body" data-body-target="finishContent">
-        <p>This is a modal to show that the timer has ended. It works!</p>
-        <h4>IT WORKS!!!</h4>
+        <p>If you're seeing this text, something went wrong!</p>
       </div>
+
+      <div class="buttons-container">
+        <button type="button" class="close modal-button" data-bs-toggle="modal">Keep writing</button>
+        <button type="button" class="modal-button" data-action="click->body#copy">Copy text</button>
+        <button type="button" class="modal-button" onClick="window.location.reload();">Start again</button>
+      </div>
+
+      <p class="github-container"><a href="https://github.com/gloyens" target="blank" class="link">my Github</a></p>
 
     </div>
 

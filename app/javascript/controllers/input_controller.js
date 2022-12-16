@@ -10,7 +10,7 @@ export default class extends Controller {
 
   doNothing(event) { // rename this
     const disabled = ["Delete", "ArrowUp", "ArrowLeft", "ArrowDown", "ArrowRight", "Home"];
-    const ctrlDisabled = ["a", "c", "v", "z"];
+    const ctrlDisabled = ["a", "z"];
 
     if (disabled.includes(event.key)) {
       console.log(`${event.key} disabled!`)

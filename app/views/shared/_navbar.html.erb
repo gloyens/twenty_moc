@@ -2,10 +2,16 @@
   <div class="container-fluid">
 
     <div class="navbar-icons">
-      <!-- Github -->
-      <%= link_to "https://github.com/gloyens", class: "navbar-brand" do %>
+      <!-- Github
+      <%#= link_to "https://github.com/gloyens", class: "navbar-brand" do %>
         <i class="fa-brands fa-github"></i>
+      <%# end %>-->
+
+      <!-- Info -->
+      <%= link_to "", class: "navbar-brand", data: { bs_toggle: "modal", bs_target: "#infoModal" }, onclick: "return false;" do %>
+        <i class="fa-solid fa-circle-info"></i>
       <% end %>
+
     </div>
 
     <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,15 +19,6 @@
     </button>-->
 
     <div class="navbar-icons">
-      <!-- Timer -->
-      <%= link_to "",
-        class: "navbar-brand tooltip-container",
-        style: "color: #cdbfb4",
-        data: { action: "click->body#toggleStrictBackspace",
-                body_target: "backspaceToggle" },
-        onclick: "return false;" do %>
-        <i class="fa-solid fa-backspace"></i>
-      <% end %>
 
       <!-- Timer -->
       <%= link_to "", class: "navbar-brand tooltip-container", data: { action: "click->body#showTimer" } do %>
@@ -35,10 +32,16 @@
         <span class="tooltip-text" data-body-target="tooltipCopy">Copied!</span>
       <% end %>
 
-      <!-- Info -->
-      <%= link_to "", class: "navbar-brand", data: { bs_toggle: "modal", bs_target: "#infoModal" }, onclick: "return false;" do %>
-        <i class="fa-solid fa-circle-info"></i>
+      <!-- Backspace Toggle -->
+      <%= link_to "",
+        class: "navbar-brand tooltip-container",
+        style: "color: #cdbfb4",
+        data: { action: "click->body#toggleStrictBackspace",
+                body_target: "backspaceToggle" },
+        onclick: "return false;" do %>
+        <i class="fa-solid fa-backspace"></i>
       <% end %>
+
     </div>
 
     <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">

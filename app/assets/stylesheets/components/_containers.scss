@@ -3,6 +3,28 @@
   width: 700px;
 }
 
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+
+.github-container {
+  width: 100%;
+  text-align: right;
+  margin: 0 8px;
+  font-family: Verdana, Tahoma, sans-serif;
+
+  a {
+    text-decoration: none;
+    color: $dark-beige;
+
+    &:hover {
+      color: $darker-beige;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .margin-container {
     width: 100%;

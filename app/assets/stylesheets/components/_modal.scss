@@ -28,6 +28,22 @@
   }
 }
 
+
+.modal-button {
+  display: flex;
+  background-color: $darker-beige;
+  color: white;
+  padding: 8px 16px;
+  margin: 4px;
+  border: none;
+  border-radius: 6px;
+  font-family: Verdana, Tahoma, sans-serif;
+
+  &:hover {
+    background-color: $darkest-beige;
+    color: white;
+  }
+}
 // .modal-backdrop {
 //   background-color: $darker-beige;
 // }

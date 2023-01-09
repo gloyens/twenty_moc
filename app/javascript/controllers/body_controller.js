@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import { Modal } from 'bootstrap';
 
-let seconds = 20 * 60; // Total time
+let seconds = 20; // Total time
 
 let startTime;
 let endTime;
@@ -15,7 +15,7 @@ let breakCount = 0;
 let breakStartTime;
 let breakTotalTime = 0;
 
-let strictBackspace = true;
+let strictBackspace = false;
 
 // Connects to data-controller="body"
 export default class extends Controller {
@@ -23,10 +23,12 @@ export default class extends Controller {
     "input",
     "tooltipCopy",
     "tooltipTimer",
+    "tooltipBackspace",
     "finishModal",
     "finishContent",
     "backspaceToggle",
-    "modalImage"];
+    "modalImage",
+    "modalCopy"];
 
   connect() {
     // Reset any existing timers.
@@ -44,6 +46,15 @@ export default class extends Controller {
 
     // Hide tooltip
     setTimeout(() => this.hideTooltip(this.tooltipCopyTarget), 2000);
+  }
+
+  modalCopy(event) {
+    // Copy input text
+    const copyText = this.inputTarget.value;
+    navigator.clipboard.writeText(copyText);
+
+    this.modalCopyTarget.style.backgroundColor = "#cdbfb4";
+    this.modalCopyTarget.innerText = "Copied!";
   }
 
   hideTooltip(target) {
@@ -103,6 +114,7 @@ export default class extends Controller {
     // Show timer tooltip
     this.tooltipTimerTarget.style.opacity = 1;
     event.preventDefault();
+    this.inputTarget.focus();
 
     // Hide timer tooltip
     setTimeout(() => this.hideTooltip(this.tooltipTimerTarget), 5000);
@@ -141,6 +153,14 @@ export default class extends Controller {
     strictBackspace = !strictBackspace;
     this.inputTarget.focus();
     this.backspaceToggleTarget.style.color = strictBackspace ? "#cdbfb4" : "black";
+
+    if (strictBackspace) {
+      // Show tooltip
+      this.tooltipBackspaceTarget.style.opacity = 1;
+
+      // Hide tooltip
+      setTimeout(() => this.hideTooltip(this.tooltipBackspaceTarget), 2000);
+    }
   }
 
   backspaceCheck(event) {

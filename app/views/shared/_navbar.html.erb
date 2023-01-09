@@ -23,25 +23,26 @@
       <!-- Timer -->
       <%= link_to "", class: "navbar-brand tooltip-container", data: { action: "click->body#showTimer" } do %>
         <i class="fa-solid fa-clock"></i>
-        <span class="tooltip-text" data-body-target="tooltipTimer">--:--</span>
       <% end %>
 
       <!-- Copy -->
       <%= link_to "", class: "navbar-brand tooltip-container", data: { action: "click->body#copy" } do %>
         <i class="fa-solid fa-copy"></i>
-        <span class="tooltip-text" data-body-target="tooltipCopy">Copied!</span>
       <% end %>
 
       <!-- Backspace Toggle -->
       <%= link_to "",
         class: "navbar-brand tooltip-container",
-        style: "color: #cdbfb4",
+        style: "color: black",
         data: { action: "click->body#toggleStrictBackspace",
                 body_target: "backspaceToggle" },
         onclick: "return false;" do %>
         <i class="fa-solid fa-backspace"></i>
       <% end %>
 
+      <span class="tooltip-text" data-body-target="tooltipTimer">--:--</span>
+      <span class="tooltip-text" data-body-target="tooltipCopy">Copied!</span>
+      <span class="tooltip-text" data-body-target="tooltipBackspace">Backspace<br>disabled</span>
     </div>
 
     <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">

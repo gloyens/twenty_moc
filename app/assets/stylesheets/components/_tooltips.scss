@@ -4,17 +4,16 @@
 
 .tooltip-text {
   opacity: 0;
-  width: 80px;
-  top: 125%;
-  left: 50%;
-  margin-left: -40px;
+  width: 120px;
+  top: 60px;
+  right: 20px;
 
   background-color: $darker-beige;
   color: white;
   font-size: 14px;
   font-family: Verdana, Tahoma, sans-serif;
   text-align: center;
-  padding: 5px 0;
+  padding: 5px 15px;
   border-radius: 6px;
   cursor: default;
 
@@ -24,14 +23,14 @@
   transition: 0.3s;
 
   // tooltip arrow
-  &::after {
-    content: " ";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent $darker-beige transparent;
-  }
+  // &::after {
+  //   content: " ";
+  //   position: absolute;
+  //   bottom: 100%;
+  //   left: 50%;
+  //   margin-left: -5px;
+  //   border-width: 5px;
+  //   border-style: solid;
+  //   border-color: transparent transparent $darker-beige transparent;
+  // }
 }
